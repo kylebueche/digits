@@ -4,9 +4,10 @@
 /* Set up some CSS variables to theme the application. */
 /* Set up some CSS variables to theme the application. */
 :root {
-  --matr-navbar-bg: #ECECEC;
-  --matr-navbar-bg-rgb: 236, 236, 236;
+  --matr-navbar-bg: darkblue;
+  --matr-navbar-bg-rgb: 0, 0, 139;
   --matr-navbar-text-color: white;
+  --matr-navbar-highlight-text: khaki;
 }
 
 /* Change bootstrap variable values.
@@ -15,8 +16,16 @@
 body {
   --bs-dark: var(--matr-navbar-bg);
   --bs-dark-rgb: var(--matr-navbar-bg-rgb);
-  background: fixed center url("images/meteor-logo.png");
+  background: fixed center url("images/light-background.jpg");
   background-size: cover;
+}
+
+body .navbar {
+  --bs-navbar-active-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--matr-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-color: var(--matr-navbar-text-color);
+  --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
 }
 
 /* Set the alert background on the signin and signup pages. */
