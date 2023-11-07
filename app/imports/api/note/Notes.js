@@ -15,7 +15,7 @@ class NotesCollection {
       note: String,
       contactId: String,
       owner: String,
-      createAt: Date,
+      createdAt: Date,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

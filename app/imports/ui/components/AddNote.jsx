@@ -2,16 +2,16 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, TextField, HiddenField, SubmitField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
-import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import PropTypes from 'prop-types';
 import { Notes } from '../../api/note/Notes';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   note: String,
   owner: String,
-  contactID: String,
+  contactId: String,
   createdAt: Date,
 });
 
@@ -22,6 +22,7 @@ const AddNote = ({ owner, contactId }) => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
+    console.log(data);
     const { note, createdAt } = data;
     Notes.collection.insert(
       { note, contactId, createdAt, owner },
@@ -42,7 +43,7 @@ const AddNote = ({ owner, contactId }) => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Add Note</h2></Col>
+          <Col className="text-center"><h4>Add Timestamped Note</h4></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>

@@ -14,7 +14,7 @@ const Note = ({ note }) => (
 Note.propTypes = {
   note: PropTypes.shape({
     note: PropTypes.string,
-    contactID: PropTypes.string,
+    contactId: PropTypes.string,
     createdAt: PropTypes.instanceOf(Date),
     _id: PropTypes.string,
   }).isRequired,
